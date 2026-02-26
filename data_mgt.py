@@ -17,7 +17,7 @@ def load_users():
         return json.load(f)
 
 def save_user(user_id, user_data):
-   #first we get the existing data
+   #first we get the existing data from the database, which is a dictionary of all users.
     all_users = load_users() 
     #then we get the new entry and values using the key(user_id)
     all_users[user_id] = user_data 

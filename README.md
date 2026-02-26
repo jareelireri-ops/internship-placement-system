@@ -1,8 +1,8 @@
-#  Student Internship Portal
+#  Student Internship Portal (LUCKY YOU)
 
 Welcome to the Lucky-You Internship Portal! This is a modular Python-based system designed to handle student registrations, secure logins, and internship applications through a clean command-line interface.
 
-## 📂 Project Structure
+## Project Structure
 
 To keep the code clean and professional, I've organized the logic into specific modules:
 
