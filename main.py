@@ -11,76 +11,63 @@ import random
 DATA_FILE = "students.json"
 
 
-
-# HELPER FUNCTIONS (For File Storage)
-
-
+#Helper functions(for file storage)
 def load_students():
-    # Try to open the JSON file
+    # Trying to open the JSON file
     try:
-        with open(DATA_FILE, "r") as file:   # Open file in read mode
-            return json.load(file)           # Convert JSON to Python list
+        with open (DATA_FILE, "r") as file:     #opens a file in read mode
+            return json.load(file)     #it converts  JSON to pyhton list
     except FileNotFoundError:
-        return []  # If file doesn't exist, return empty list
-
-
+        return []       # if file doesn't exist, it returns an empty list
+   
+   
 def save_students(students):
-    # Open file in write mode
-    with open(DATA_FILE, "w") as file:
-        # Save Python list as JSON into file
-        json.dump(students, file, indent=4)
+       with open (DATA_FILE, "w") as file:   #opens file in write mode
+           json.dump(students, file, indent=4)   #saves python as JSON into a file
+           
 
-
-# BASE CLASS (OOP: CLASS + ENCAPSULATION)
-
-
+#user class, encapsulation
 class User:
     """
     Base class for all users.
     Demonstrates encapsulation of password.
     """
-
+ 
     def __init__(self, username, password):
-        self.username = username  # Store username
-
-        # Private password (encapsulation)
-        self.__password = self.hash_password(password)
-
+        self.username = username
+        
+    #using a private password ,encapsulation
+        self._password = self.hash_password(password)
+        
     def hash_password(self, password):
-        # Convert password into secure hash
-        return hashlib.sha256(password.encode()).hexdigest()
-
-    def verify_password(self, password):
-        # Compare entered password with stored hashed password
-        return self.__password == self.hash_password(password)
-
+        return hashlib.sha256(password.encode()).hexdigest()   #converts password into secure hash
+    
+    def verify_password(self,password):
+        return self._password == self.hash_password(password)  #compares entered password with stored hashed password
+    
     def get_password(self):
-        # Getter method to safely access private password
-        return self.__password
+        return self._password
 
 
-
-# STUDENT CLASS (INHERITANCE)
-
-
+#student class, inheritance
 class Student(User):
     """
     Student inherits from User.
     Demonstrates inheritance.
     """
-
+        
     def __init__(self, username, password):
-        # Call parent constructor
-        super().__init__(username, password)
-
-        # Student-specific attributes
+        super().__init__(username, password)     #calling parent constructor
+        
+        #specific attributes
         self.course = None
         self.company = None
+            
 
     # Method to select program
     def select_course(self):
 
-        print("\nAvailable Programs:")
+        print("\nAvailable Programs: ")
         print("1. Software Engineering")
         print("2. Data Science")
         print("3. Business")
@@ -122,23 +109,20 @@ class Student(User):
             "Artificial Intelligence": ["AIBrain", "FutureTech"]
         }
 
-        # Randomly choose company based on course
+    # Randomly choose company based on course
         self.company = random.choice(companies[self.course])
-
         print(f"\nYou have been placed at {self.company} under {self.course}.")
 
-    # Method to view internship details
+    
+    # method for viewing internship details
     def view_details(self):
-        print("\n--- Internship Details ---")
+        print("\n-------Internship Details------")
         print("Username:", self.username)
         print("Program:", self.course)
-        print("Company:", self.company)
+        print("Company", self.company)
 
 
-
-# REGISTRATION FUNCTION
-
-
+#registration function
 def register():
 
     students = load_students()  # Load saved students
@@ -169,7 +153,7 @@ def register():
 
 
 
-# LOGIN FUNCTION
+#login function
 
 
 def login():
@@ -206,7 +190,7 @@ def login():
 
 
 
-# UPDATE STUDENT DATA
+# updating student data
 
 
 def update_student_data(student):
@@ -221,8 +205,6 @@ def update_student_data(student):
 
     save_students(students)
 
-
-# MAIN PROGRAM LOOP
 
 
 def main():
