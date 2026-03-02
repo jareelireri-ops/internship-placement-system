@@ -30,5 +30,6 @@ Locked Doors: You can't see the internship list unless you are logged in. The "B
 
 Smart Lists: The internships are organized by category, so it's easy to find what fits your course.
 
----
-*Built with Python - No external dependencies required.*
+Colorful Alerts: If you make a mistake (like a wrong password), the error message pops up in Bold Red so you can't miss it.
+
+Built with Python 3 and Colorama.
