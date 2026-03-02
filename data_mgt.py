@@ -1,7 +1,8 @@
 import json
-import os
+import os  
 
-DB_FILE = "users.json"
+DB_FILE = "users.json"  #name of the file
+
 
 def initialize_db():
     #first, we check if the database file exists,if not it is created.
