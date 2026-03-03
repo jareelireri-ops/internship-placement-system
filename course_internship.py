@@ -1,6 +1,9 @@
 from auth import login_required
 
-#This is the parent class, that will pass traits via super() to another class
+#This is the parent class, that will pass traits via super()
+#  to anY OTHER class we plan to incorporate.
+#the plan of our project is for it to be an extensive framework, 
+# currently we used an internship placement system as the goal
 class BaseService:
     def __init__(self, service_name):
         self.service_name = service_name

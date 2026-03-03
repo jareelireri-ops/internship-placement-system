@@ -1,7 +1,7 @@
-🎓 Student Internship Portal (LUCKY YOU)
+: Student Internship Portal (LUCKY YOU)
 A simple Python program for students to sign up, log in, and apply for internship positions.
 
-📂 What’s in the Folder?
+: What’s in the Folder?
 main.py – The main menu. Start the program from here.
 
 auth.py – The "Bouncer." Handles sign-ups and makes sure only logged-in users can see the internships.
@@ -12,7 +12,7 @@ data_mgt.py – The Saver. Handles saving and loading your information so it doe
 
 users.json – The Storage. This is where your account details are kept.
 
-🚀 How to Run
+: How to Run
 Install the Color Tool:
 Open your terminal and type:
 
@@ -23,7 +23,8 @@ Type:
 
 Bash
 python main.py
-✨ What it Does
+:
+ What it Does
 Remembers You: When you create an account, it saves it to a file. You can close the app, come back later, and your login will still work.
 
 Locked Doors: You can't see the internship list unless you are logged in. The "Bouncer" code blocks anyone else.
