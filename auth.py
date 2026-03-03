@@ -65,7 +65,7 @@ def login_user():
         #we confirm if the Id number given is in users and if it matches the password aligned with it.
         user_data = users[user_id]
 
-        print(f"Welcome back, {user_data['name']}!")
+        print(f"Welcome to the LUCKY-YOU placement program {user_data['name']}!")
         
         # We store the active/current user as a dictionary for the rest of the app to use
         current_user = {"id": user_id, **user_data}
